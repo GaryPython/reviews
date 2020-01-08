@@ -10,8 +10,13 @@ for d in data:
 	sum_len = sum_len + len(d)
 print('每筆留言平均是', sum_len/len(data))
 
-good = [d for d in data if 'good' in d] 
-print(len(good))
+
+bad = ['bad' in d for d in data]
+print(bad)
+
+bad = []
+for d in data:
+	bad.append('bad' in d)
 #new = []
 #for d in data:
 #	if len(d) < 100:
@@ -19,12 +24,13 @@ print(len(good))
 #print('一共有', len(new), '筆留言資料小於100')
 #print(new[0])
 
-good = [] 
-for d in data:
-	if 'good' in d:
-		good.append(d)
-print('一共有', len(good), '筆留言提到good')
+#good = []
+#for d in data: 
+#	if 'good' in d:
+#		good.append(d)
+#print('一共有', len(good), '筆留言提到good')
 #print(good[0])
-
+good = [d for d in data if 'good' in d] 
+print(len(good))
 
 
